@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="../images/images/favicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Bostorek</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="../stylesheets/bootstrap.css" />
+  <!-- font awesome style -->
+  <link href="../stylesheets/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="../stylesheets/allItems.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="../stylesheets/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="container">
+    <div id="head">
+        <h1 >Wishlisted Items</h1>
+    </div>
+    
+    <form action="/logout">
+        <a id="logout" href="/logout" class="btn btn-primary">Logout</a>
+
+    </form>
+    <div class="container">
+        <% if(user.items.length > 0) {%>
+
+            <div id="cards">
+                <% user.items.forEach(function(item) {%>
+                    <div class="card" style="width: 18rem; ">
+                        <div class="card-body">
+                            <img src=<%= item.image %> class="card-img-top" alt="...">
+                            <h4><%= item.price %> </h4>
+                            <h5 class="card-title"><%= item.bookname %></h5>
+                            <p class="card-text"><%= item.edition %></p>
+                            <a href="/removeCart/<%=item._id%>" id="remove" class="btn btn-success btn-xs">remove item</a>
+                            
+                        </div>
+                    </div>
+                    
+                    <%})%>
+                </div>
+            <%}else{%>
+                <h5> Your cart is empty</h5> 
+            <%}%>  
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.js" integrity="sha512-rozBdNtS7jw9BlC76YF1FQGjz17qQ0J/Vu9ZCFIW374sEy4EZRbRcUZa2RU/MZ90X2mnLU56F75VfdToGV0RiA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>

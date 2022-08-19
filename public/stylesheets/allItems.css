@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    background-color: #F5F5F9;
+}
+#cards{
+    display:flex;     
+    flex-wrap: wrap; 
+    width:100%;
+    /* min-height:100vh; */
+    /* background-color:red;  */
+}
+.card{
+    margin-left:35px;
+    margin-bottom: 15px;
+}
+.card-body{
+    margin-left:10px;
+}
+#logout{
+    position: absolute;
+    right: 2%;
+    top:5%;
+}
+#cart{
+    position: absolute;
+    right: 2%;
+    top:12%;
+}
+#head{
+    width: 100%;
+    height: 100px;
+    /* background-color:black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
